@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cu-interfaces.LIB\cu-interfaces.LIB.csproj">
+      <Project>{3a61a8cb-cf8c-41f1-93ef-26f2bc721d24}</Project>
+      <Name>cu-interfaces.LIB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
