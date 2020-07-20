@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace cu_interfaces.LIB.Klassen
 {
-    class Radio
+    class Radio : ElektrischToestel
     {
+        public Radio(string livingRoom) : base(livingRoom)
+        {
+
+        }
     }
 }
