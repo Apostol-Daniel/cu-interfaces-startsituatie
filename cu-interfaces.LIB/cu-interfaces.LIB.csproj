@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ElektrischToestel.cs" />
+    <Compile Include="Interfaces\ICheckBroadCastConnection.cs" />
     <Compile Include="Interfaces\IPower.cs" />
     <Compile Include="Interfaces\IVolume.cs" />
     <Compile Include="Klassen\Radio.cs" />
