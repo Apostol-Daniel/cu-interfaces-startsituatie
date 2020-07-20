@@ -57,6 +57,16 @@ namespace cu_interfaces.WPF
 
         private void btnRadioKeuken_Click(object sender, RoutedEventArgs e)
         {
+            if (radioKeuken.IsOn)
+            {
+                lblRadioKeuken.Content = radioKeuken.PowerOff();
+                lblRadioKeuken.Background = Brushes.Red;
+            }
+            else
+            {
+                lblRadioKeuken.Content = radioKeuken.PowerOn();
+                lblRadioKeuken.Background = Brushes.Green;
+            }
         }
 
         private void btnTvWoonKamerVolumeDown_Click(object sender, RoutedEventArgs e)
