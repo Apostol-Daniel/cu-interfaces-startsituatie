@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using cu_interfaces.LIB.Klassen;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
 
@@ -9,6 +10,7 @@ namespace cu_interfaces.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        Televisie tvWoonkamer;
 
         public MainWindow()
         {
@@ -17,6 +19,7 @@ namespace cu_interfaces.WPF
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            tvWoonkamer = new Televisie("woonkamer");
         }
 
         private void btnTvWoonkamerPower_Click(object sender, RoutedEventArgs e)
