@@ -12,7 +12,7 @@ namespace cu_interfaces.WPF
     {
         Televisie tvWoonkamer;
         Radio radioKeuken;
-        SmartLamp lamgang;
+        SmartLamp lampGang;
 
         public MainWindow()
         {
@@ -23,6 +23,7 @@ namespace cu_interfaces.WPF
         {
             tvWoonkamer = new Televisie("woonkamer");
             radioKeuken = new Radio("keuken");
+            lampGang = new SmartLamp("gang");
         }
 
         private void btnTvWoonkamerPower_Click(object sender, RoutedEventArgs e)
