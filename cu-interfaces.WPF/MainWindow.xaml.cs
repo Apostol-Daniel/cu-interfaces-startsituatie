@@ -11,6 +11,8 @@ namespace cu_interfaces.WPF
     public partial class MainWindow : Window
     {
         Televisie tvWoonkamer;
+        Radio radioKeuken;
+        SmartLamp lamgang;
 
         public MainWindow()
         {
@@ -20,6 +22,7 @@ namespace cu_interfaces.WPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             tvWoonkamer = new Televisie("woonkamer");
+            radioKeuken = new Radio("keuken");
         }
 
         private void btnTvWoonkamerPower_Click(object sender, RoutedEventArgs e)
