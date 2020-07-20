@@ -89,10 +89,20 @@ namespace cu_interfaces.WPF
 
         private void btnRadioKeukenVolumeDown_Click(object sender, RoutedEventArgs e)
         {
+            if (radioKeuken.IsOn)
+            {
+                radioKeuken.VolumeDown();
+                lblRadioKeukenVolume.Content = radioKeuken.CurrentVolume;
+            }
         }
 
         private void btnRadioKeukenVolumeUp_Click(object sender, RoutedEventArgs e)
         {
+            if (radioKeuken.IsOn)
+            {
+                radioKeuken.VolumeUp();
+                lblRadioKeukenVolume.Content = radioKeuken.CurrentVolume;
+            }
         }
 
         private void btnCheckConnections_Click(object sender, RoutedEventArgs e)
