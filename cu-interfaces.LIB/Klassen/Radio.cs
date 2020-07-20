@@ -33,6 +33,7 @@ namespace cu_interfaces.LIB.Klassen
 
         public void VolumeUp()
         {
+            CurrentVolume += 10;
             if(CurrentVolume > 100)
             {
                 CurrentVolume = 100;
@@ -41,6 +42,7 @@ namespace cu_interfaces.LIB.Klassen
 
         public void VolumeDown()
         {
+            CurrentVolume -= 10;
             if(CurrentVolume < 0)
             {
                 CurrentVolume = 0;
