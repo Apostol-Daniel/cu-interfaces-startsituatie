@@ -8,5 +8,9 @@ namespace cu_interfaces.LIB.Interfaces
 {
     interface IVolume
     {
+        int CurrentVolume { get; }
+
+        void VolumeUp();
+        void VolumeDown();
     }
 }
