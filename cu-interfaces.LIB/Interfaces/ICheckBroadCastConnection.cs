@@ -8,5 +8,6 @@ namespace cu_interfaces.LIB.Interfaces
 {
     interface ICheckBroadCastConnection
     {
+        string CheckBroadCastConnection();
     }
 }
