@@ -42,6 +42,17 @@ namespace cu_interfaces.WPF
 
         private void btnSmartLampGangPower_Click(object sender, RoutedEventArgs e)
         {
+            if (lampGang.IsOn)
+            {
+                lblSmartLampGang.Content = lampGang.PowerOff();
+                lblSmartLampGang.Background = Brushes.Red;
+            }
+            else
+            {
+                lblSmartLampGang.Content = lampGang.PowerOn();
+                lblSmartLampGang.Background = Brushes.Green;
+            }
+            
         }
 
         private void btnRadioKeuken_Click(object sender, RoutedEventArgs e)
