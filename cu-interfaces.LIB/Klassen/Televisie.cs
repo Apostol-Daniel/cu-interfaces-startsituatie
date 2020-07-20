@@ -40,7 +40,7 @@ namespace cu_interfaces.LIB.Klassen
 
         public void VolumeDown()
         {
-            CurrentVolume = -10;
+            CurrentVolume += -10;
             if(CurrentVolume < 0)
             {
                 CurrentVolume = 0;
