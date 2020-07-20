@@ -1,4 +1,5 @@
-﻿using cu_interfaces.LIB.Klassen;
+﻿using cu_interfaces.LIB.Interfaces;
+using cu_interfaces.LIB.Klassen;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
@@ -107,6 +108,21 @@ namespace cu_interfaces.WPF
 
         private void btnCheckConnections_Click(object sender, RoutedEventArgs e)
         {
+            List<ICheckBroadCastConnection> connecChecks = new List<ICheckBroadCastConnection>
+            {
+                new Radio("keuken"),
+                new Televisie("keuken"),
+                new Radio("badkamer"),
+                new Radio("living"),
+                new Televisie("slaapkamer"),
+                new Radio("wc"),
+            };
+
+            tbkTestConnectionFeedback.Text = "";
+            foreach(ICheckBroadCastConnection check in connecChecks)
+            {
+                tbkTestConnectionFeedback.Text += check.CheckBroadCastConnection();
+            }
         }
         
         private void btnCheckInterfaceImplementation_Click(object sender, RoutedEventArgs e)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cu_interfaces.LIB.Interfaces
 {
-    interface ICheckBroadCastConnection
+    public interface ICheckBroadCastConnection
     {
         string CheckBroadCastConnection();
     }
