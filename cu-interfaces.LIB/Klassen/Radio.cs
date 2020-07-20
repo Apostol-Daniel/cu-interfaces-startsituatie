@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace cu_interfaces.LIB.Klassen
 {
-    public class Radio : ElektrischToestel ,IPower
+    public class Radio : ElektrischToestel ,IPower, IVolume
     {
 
         public bool IsOn { get; set; }
+        public int CurrentVolume { get; private set; } = 50;
+
         public Radio(string livingRoom) : base(livingRoom)
         {
 
@@ -27,6 +29,22 @@ namespace cu_interfaces.LIB.Klassen
         {
             IsOn = true;
             return $"Radio {LivingRoom} is aan";
+        }
+
+        public void VolumeUp()
+        {
+            if(CurrentVolume > 100)
+            {
+                CurrentVolume = 100;
+            }
+        }
+
+        public void VolumeDown()
+        {
+            if(CurrentVolume < 0)
+            {
+                CurrentVolume = 0;
+            }
         }
     }
 }
