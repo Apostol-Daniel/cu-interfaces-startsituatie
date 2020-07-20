@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace cu_interfaces.LIB.Klassen
 {
-    public class Radio : ElektrischToestel ,IPower, IVolume
+    public class Radio : ElektrischToestel ,IPower, IVolume,ICheckBroadCastConnection
     {
 
         public bool IsOn { get; set; }
@@ -47,6 +47,34 @@ namespace cu_interfaces.LIB.Klassen
             {
                 CurrentVolume = 0;
             }
+        }
+
+        static Random rnd = new Random();
+        private bool IsFmWorking()
+        {
+            int trueOrFalse = rnd.Next(2);
+            return Convert.ToBoolean(trueOrFalse);
+        }
+
+        private bool IsAntennaExtended()
+        {
+            int trueOrFalse = rnd.Next(2);
+            return Convert.ToBoolean(trueOrFalse);
+        }
+
+        public string CheckBroadCastConnection()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine($"======Testing {this.GetType().Name} {LivingRoom}======");
+            stringBuilder.AppendLine("Is antenna extened? Checking antenna.\nPlease wait.");
+            stringBuilder.AppendLine($"Antenna  test returns {IsAntennaExtended()}");
+
+            stringBuilder.AppendLine("Is FM working? Checking FM.\nPlease wait.");
+            stringBuilder.AppendLine($"Fm  test returns {IsFmWorking()}");
+            stringBuilder.AppendLine($"===End of test {this.GetType().Name}{LivingRoom}==={Environment.NewLine}");
+
+            return stringBuilder.ToString();
+
         }
     }
 }
