@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace cu_interfaces.LIB.Klassen
 {
-    class SmartLamp
+    public class SmartLamp : ElektrischToestel
     {
+        public SmartLamp(string livingRoom) : base(livingRoom)
+        {
+
+        }
     }
 }
