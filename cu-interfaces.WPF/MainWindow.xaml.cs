@@ -80,6 +80,11 @@ namespace cu_interfaces.WPF
 
         private void btnTvWoonKamerVolumeUp_Click(object sender, RoutedEventArgs e)
         {
+            if (tvWoonkamer.IsOn)
+            {
+                tvWoonkamer.VolumeUp();
+                lblTvWoonKamerVolume.Content = tvWoonkamer.CurrentVolume;
+            }
         }
 
         private void btnRadioKeukenVolumeDown_Click(object sender, RoutedEventArgs e)
