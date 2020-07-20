@@ -24,6 +24,16 @@ namespace cu_interfaces.WPF
 
         private void btnTvWoonkamerPower_Click(object sender, RoutedEventArgs e)
         {
+            if (tvWoonkamer.IsOn)
+            {
+                lblTvWoonkamer.Content = tvWoonkamer.PowerOff();
+                lblTvWoonkamer.Background = Brushes.Red;
+            }
+            else
+            {
+                lblTvWoonkamer.Content = tvWoonkamer.PowerOn();
+                lblTvWoonkamer.Background = Brushes.Green;
+            }
         }
 
         private void btnSmartLampGangPower_Click(object sender, RoutedEventArgs e)

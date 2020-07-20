@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ElektrischToestel.cs" />
     <Compile Include="Interfaces\IPower.cs" />
+    <Compile Include="Klassen\Radio.cs" />
     <Compile Include="Klassen\Televisie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
