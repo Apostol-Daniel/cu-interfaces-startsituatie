@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cu_interfaces.LIB.Interfaces
 {
-    interface IVolume
+    public interface IVolume
     {
         int CurrentVolume { get; }
 

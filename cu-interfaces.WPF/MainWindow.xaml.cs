@@ -1,6 +1,7 @@
 ﻿using cu_interfaces.LIB.Interfaces;
 using cu_interfaces.LIB.Klassen;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 using System.Windows.Media;
 
@@ -127,6 +128,48 @@ namespace cu_interfaces.WPF
         
         private void btnCheckInterfaceImplementation_Click(object sender, RoutedEventArgs e)
         {
+            List<IPower> powerables = new List<IPower> 
+            {
+                lampGang,
+                tvWoonkamer,
+                radioKeuken
+            };
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach(IPower powerableItem in powerables)
+            {
+                if (!powerableItem.IsOn)
+                {
+                    powerableItem.IsOn = true;
+                }
+                stringBuilder.AppendLine($"{powerableItem.GetType().Name} power is on:{powerableItem.IsOn}");
+                
+                if(powerableItem is IVolume volumeChangeableItem)
+                {
+                    stringBuilder.AppendLine($"Volume was:{volumeChangeableItem.CurrentVolume}");
+                    volumeChangeableItem.VolumeUp();
+                    stringBuilder.AppendLine($"Volume is now raised to:{volumeChangeableItem.CurrentVolume}");
+
+                if(powerableItem is Televisie)
+                {
+                    lblTvWoonkamer.Content = "AAN";
+                    lblTvWoonKamerVolume.Content = volumeChangeableItem.CurrentVolume;
+                    lblTvWoonkamer.Background = Brushes.LightGreen;
+                }
+
+                if(powerableItem is Radio)
+                    {
+                        lblRadioKeuken.Content = "AAN";
+                        lblRadioKeukenVolume.Content = volumeChangeableItem.CurrentVolume;
+                        lblRadioKeuken.Background = Brushes.LightGreen;
+                    }
+
+                }
+
+            }
+            tbkTestConnectionFeedback.Text = stringBuilder.ToString();
         }
+
     }
 }
